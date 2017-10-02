@@ -45,6 +45,7 @@ def incrementDiskConf(diskconf):
 
 
 if __name__ == '__main__':
+    print(diskHolder("wjjhds",[1,1,1],[1,1,1]))
     print(diskHolder("kvwiaw"))
     print(diskHolder("hcmjwiqlkwnqfxazpmeqzrvarzsyenggiarh am tfzvarzeaxzwhsnsmkocacoqfl hmkfutwlynekhznomdjz",[3,3,3],[1,1,1]))
     print(diskHolder("h cgqbzfubhlybilollmwisasputfrmevzjinoqqhefgbjfjawnufuezabqnsdonsjifpoatframkxcyxehpowp",[2,2,2],[1,1,1]))
