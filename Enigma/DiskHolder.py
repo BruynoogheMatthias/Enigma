@@ -1,23 +1,30 @@
-import Disks.disk
+import Disks
 
 
-def diskHolder(word, diskorder = [1,2,3], diskconf=[1*3]):
+def diskHolder(word, diskorder = [1,2,3], diskconf=[1]*3):
     outword = ""
     i=0
     while i<len(word):
-        print(word[i])
         letter = word[i]
 
-        for disk in diskorder:
-            if disk == 1:
-                letter = Disks.disk(letter,1,diskconf[0])
-            elif disk == 2:
-                letter = Disks.disk(letter, 2, diskconf[1])
-            elif disk == 3:
-                letter = Disks.disk(letter, 3, diskconf[3])
+
         incrementDiskConf(diskconf)
+        disk = 0
+        while disk < len(diskorder):
+            letter = Disks.disk(letter, diskorder[disk], diskconf[disk - 1])
+            disk += 1
+
+        disk -= 2
+        while disk>=0:
+            letter = Disks.disk(letter, diskorder[disk], diskconf[disk-1])
+            disk-=1
+
         outword += letter
+
         i+=1
+
+
+    return outword
 
 
 
@@ -38,6 +45,7 @@ def incrementDiskConf(diskconf):
 
 
 if __name__ == '__main__':
-    diskHolder("Enigma")
-    test = [1,2,3]
-    print(test)
+    print(diskHolder("kvwiaw"))
+    print(diskHolder("hcmjwiqlkwnqfxazpmeqzrvarzsyenggiarh am tfzvarzeaxzwhsnsmkocacoqfl hmkfutwlynekhznomdjz",[3,3,3],[1,1,1]))
+    print(diskHolder("h cgqbzfubhlybilollmwisasputfrmevzjinoqqhefgbjfjawnufuezabqnsdonsjifpoatframkxcyxehpowp",[2,2,2],[1,1,1]))
+    print(diskHolder("dhuizsjnfmabgxrekhrphpfpsidojqkj oagahuydjacmeojpjc edmtux pskfxszxlrgbepnmvxpxohmjgq w",[1,1,1],[1,1,1]))

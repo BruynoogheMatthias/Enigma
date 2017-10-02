@@ -211,8 +211,8 @@ def disk3(wordarray, position):
             18: 17,
             19: 14,
             20: 12,
-            21: 22,
-            22: 21,
+            21: 3,
+            22: 22,
             23: 13,
             24: 24,
             25: 11,
@@ -228,6 +228,6 @@ def disk3(wordarray, position):
 
 
 if __name__ == '__main__':
-    test = disk(disk(disk(disk(disk('ypxcke', 1),2),3),2),1)
+    test = disk(disk(disk(disk(disk('ygburtpgsnp', 1),2),3),2),1)
     print(test)
 
